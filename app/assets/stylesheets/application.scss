@@ -13,3 +13,53 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+body {
+	width: 90%;
+	padding-top: 10px;
+	margin: auto;
+}
+
+.topNav {
+	background: #fb651f;
+	height: 23px;
+	padding-top: 1px;
+
+	img {
+		border: 1px solid white;
+		display: inline-block;
+		width: 18px;
+		height: 18px;
+		margin-left: 1px;
+		margin-bottom: 1px;
+	}
+
+	h4 {
+		display: inline-block;
+		color: black;
+		font-size: 10pt;
+		font-family: Verdana, Geneva, sans-serif;
+		margin: 0;
+		font-weight: bold;
+	}
+
+	.nav-item-list {
+		margin-left: 5px;
+		display: inline-block;
+	}
+	.nav-item {
+		color: black;
+		margin-left: 2px;
+		font-size: 13px;
+	}
+	.nav-item:hover{
+		text-decoration: none;
+	}
+	span {
+		font-size: 10px;
+	}
+}
+.list-container {
+	background: #f6f6ef;
+}

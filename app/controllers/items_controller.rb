@@ -6,9 +6,13 @@ class ItemsController < ApplicationController
 		@items = []
 
 		response[0...2].each { |item|
-			toBeStaged = HTTParty.get(url + 'item/' + item.to_s + '.json')
-			toBeStaged = toBeStaged.parsed_response
-			@items.push(toBeStaged);
+			listItem = HTTParty.get(url + 'item/' + item.to_s + '.json')
+			listItem = listItem.parsed_response
+			@items.push(listItem);
 		}
+	end
+	# https://hacker-news.firebaseio.com/v0/item/17685358.json
+	def parseHostUrl(url)
+		return URI.parse(url).host;
 	end
 end

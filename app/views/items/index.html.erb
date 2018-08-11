@@ -1,3 +1,8 @@
-<h1>Item List</h1>
-
-<%= @items %>
+<%= @items.each_with_index do |item, index| %>
+	<div class="item-container">
+		<h1><%= index + 1 %></h1>
+		<h2><%= item['title'] %></h2>
+		<h3><%= item['shortUrl'] %></h3>
+		<h4><%= item['score'] %> points by <%= item['by'] %> <%= item['timeDifference'] %></h4>
+	</div>
+<% end %>
