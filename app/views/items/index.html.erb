@@ -1,8 +1,10 @@
-<%= @items.each_with_index do |item, index| %>
+<% @items.each_with_index do |item, index| %>
 	<div class="item-container">
 		<h1><%= index + 1 %></h1>
+		<%= link_to item['url'] do %>
 		<h2><%= item['title'] %></h2>
+		<% end %>
 		<h3><%= item['shortUrl'] %></h3>
-		<h4><%= item['score'] %> points by <%= item['by'] %> <%= item['timeDifference'] %></h4>
+		<h4><%= item['score'] %> points by <%= item['by'] %>  <%= time_ago_in_words(item['timeDifference']) %> | <%= link_to 'comments', item['commentUrl'] %></h4>
 	</div>
 <% end %>
