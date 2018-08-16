@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
     response = HTTParty.get(url + 'topstories.json')
     response = response.parsed_response
     @itemsList = []
-    response[0...10].each { | item | 
+    response[0...30].each { | item | 
       listItem = HTTParty.get(url + 'item/' + item.to_s + '.json')
       listItem = listItem.parsed_response
       listItem['shortUrl'] = parseHostUrl(listItem['url'])
@@ -16,6 +16,8 @@ class ItemsController < ApplicationController
   end
 
   def parseHostUrl(url)
-    return URI.parse(url).host;
+  	if url then
+    	return URI.parse(url).host;
+	end
   end
 end
